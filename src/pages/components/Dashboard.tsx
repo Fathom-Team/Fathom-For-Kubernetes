@@ -59,14 +59,19 @@ const Dashboard: React.FC<DashboardProps> = ({
 
   const handleSnapshotSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    const unixTimeStamp = Date.now();
-    const date = new Date(unixTimeStamp);
-    const formattedDate = date.toLocaleString();
     const obj = { ...snapshotObj };
-    obj[formattedDate] = unixTimeStamp;
-    setSnapshotObj(obj);
+    const now = Date.now();
+    const unixTimeStampArr = [1686099414000, 1685629200000, 1685023250000, now];
+    for (let i=0; i<unixTimeStampArr.length; i++) {
+      const unixTimeStamp = unixTimeStampArr[i];
+      const date = new Date(unixTimeStamp);
+      const formattedDate = date.toLocaleString();
+      obj[formattedDate] = unixTimeStamp;
+      setSnapshotObj(obj);
     console.log('new snapshotObj', snapshotObj);
+  }
   };
+
 
   const handleDashboardChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
