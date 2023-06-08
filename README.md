@@ -1,5 +1,8 @@
 # Fathom for Kubernetes
+
 Instructions: 
+
+docker pull fathomforkubernetes/fathom-beta:<version>
 
 docker run -e GITHUB_CLIENT_ID=<your_github_client_id> \
            -e GITHUB_CLIENT_SECRET=<your_github_client_secret> \
