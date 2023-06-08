@@ -20,13 +20,13 @@ RUN npm install
 RUN npm install -g pnpm 
 COPY . ./
 RUN env $(cat /run/secrets/my_env) && pnpm next build
-COPY migrate-and-start.sh .
-
-# Set permissions for the script
-RUN chmod +x migrate-and-start.sh
 
 # Generate Prisma client
 RUN npx prisma generate --schema ./prisma/schema.prisma
+
+# Set permissions for the script
+COPY migrate-and-start.sh .
+RUN chmod +x migrate-and-start.sh
 
 # Set environment variables
 ENV PORT=3000
