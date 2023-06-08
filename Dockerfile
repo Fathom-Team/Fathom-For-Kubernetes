@@ -1,5 +1,4 @@
 FROM node:18.15.0
-COPY .env /usr/src/app/.env
 WORKDIR /usr/src/app
 COPY prisma ./prisma/
 COPY package*.json ./
