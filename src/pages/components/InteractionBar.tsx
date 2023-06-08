@@ -51,8 +51,6 @@ const InteractionBar: any = ({ clusterIPArray, refetchClusterIPArray}: any) => {
     setInputIP('');
     createNewClusterIP.mutate({clusterIP: inputIP})
     // refetchClusterIPArray();
-    console.log("CLUSTERIPARRAYYYYYY", clusterIPArray);
-    console.log("SESSIONDATAAAAA", sessionData);
     }
     else {
       setInputIP('');

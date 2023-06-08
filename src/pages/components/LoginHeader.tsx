@@ -23,7 +23,7 @@ import icon from '/src/pages/assets/Fathom-text-blue.png'
       </div>
       </div>
       <div className="navbar-end">     {/* image of the github user profile */}
-        {sessionData?.user.image ? <img src={sessionData.user.image} className="w-10 rounded-full " /> : ""}
+        {sessionData?.user.image ? <img src={sessionData.user.image} className="w-10 rounded-full" /> : ""}
 
         {/* sign in/out button */}
         <button
