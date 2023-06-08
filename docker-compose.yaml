@@ -4,13 +4,14 @@ services:
   build:
     build:
       context: .
+      dockerfile: Dockerfile
     container_name: fathom
     ports:
       - "3000:3000"
     volumes:
       - ./:/usr/src/app
       - node_modules:/usr/src/app/node_modules
-    command: pnpm start
+    command: sh -c "cd /usr/src/app && npx prisma db push && pnpm start"
     depends_on:
       - postgres-db
 
